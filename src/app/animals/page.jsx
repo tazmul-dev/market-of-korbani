@@ -1,7 +1,12 @@
-import React from 'react';
+import { animals } from "@/lib/data";
 
-const animalsPage
- = () => {
+
+
+const animalsPage = async() => {
+    
+    const data = await animals()
+    console.log(data)
+    
     return (
         <div>
             Animals page
