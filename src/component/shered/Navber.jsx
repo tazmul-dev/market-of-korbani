@@ -1,5 +1,6 @@
 import React from 'react';
 import NevLink from './NevLink';
+import Link from 'next/link';
 // import logo from '@/assers/l.png'
 
 
@@ -41,8 +42,8 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-2">
-                <a className="btn btn-neutral">Login</a>
-                <a className="btn btn-neutral">Resistar</a>
+                <Link href={'/login'} className="btn btn-neutral">Login</Link>
+                <Link href={'/register'} className="btn btn-neutral">Resistar</Link>
             </div>
         </div>
     );
