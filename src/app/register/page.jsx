@@ -26,12 +26,20 @@ const RegisterPage = () => {
             alert('success registar')
         }
     }
+    const handaleGoogleLogin =async ()=>{
+        const data = await authClient.signIn.social({
+         provider: "google",
+  });
+  console.log(data)
+    }
+
     // console.log(errors, "Error")
     return (
         <div className='container mx-auto min-h-[80vh] flex justify-center items-center py-10 bg-slate-100 '>
             <div className='w-100 p-10 bg-white '>
                 <h1 className='text-2xl font-bold my-5'>Login your account</h1>
-                <button className='btn w-full'>Google</button>
+                <button onClick={ handaleGoogleLogin} className='btn w-full'>Google</button>
+
                 <div className="divider"></div>
 
                 <form onSubmit={handleSubmit(handelRegisterFunc)}>

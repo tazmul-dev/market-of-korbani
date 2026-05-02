@@ -1,13 +1,17 @@
+'use client'
 import React from 'react';
 import NevLink from './NevLink';
 import Link from 'next/link';
+import { authClient } from '@/lib/auth-client';
+import Image from 'next/image';
 // import logo from '@/assers/l.png'
 
 
 const Navber = () => {
-    const link = {
+   const {data:session, isPending} = authClient.useSession()
 
-    }
+   const user = session?.user
+    console.log(user)
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -41,10 +45,23 @@ const Navber = () => {
 
                 </ul>
             </div>
+           {isPending? (<span className="loading loading-spinner loading-md"></span>): user ? (
             <div className="navbar-end flex gap-2">
+              <Image
+              width={60}
+              height={60}
+              src={user.image}
+              alt='aveter'
+              className=' rounded-full'
+              ></Image>
+              <button onClick={async()=> await authClient.signOut()} className='btn'>Log out</button>
+            </div>
+           ):(
+             <div className="navbar-end flex gap-2">
                 <Link href={'/login'} className="btn btn-neutral">Login</Link>
                 <Link href={'/register'} className="btn btn-neutral">Resistar</Link>
             </div>
+           )}
         </div>
     );
 };
