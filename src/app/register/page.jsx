@@ -1,72 +1,88 @@
 "use client"
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const RegisterPage = () => {
-    const {register, handleSubmit, formState: { errors }} = useForm()
-    const handelRegisterFunc =(data)=>{
-        
-    
+    const { register, handleSubmit, formState: { errors } } = useForm()
+    const handelRegisterFunc = async (UserData) => {
+        const { name, email, photo, password } = UserData
 
+        // console.log(name, photo, password, email)
+
+        const {data, error } = await authClient.signUp.email({
+            name: name, // required
+            email: email, // required
+            password:password, // required
+            image: photo,
+            callbackURL: "/",
+        })
+        console.log(data, error)
+        if(error){
+            alert('user alrady register')
+        }
+        if(data){
+            alert('success registar')
+        }
     }
-    console.log(errors, "Error")
+    // console.log(errors, "Error")
     return (
         <div className='container mx-auto min-h-[80vh] flex justify-center items-center py-10 bg-slate-100 '>
-            <div className='p-4 bg-white'>
+            <div className='w-100 p-10 bg-white '>
                 <h1 className='text-2xl font-bold my-5'>Login your account</h1>
                 <button className='btn w-full'>Google</button>
-                 <div className="divider"></div>
+                <div className="divider"></div>
 
                 <form onSubmit={handleSubmit(handelRegisterFunc)}>
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Name</legend>
                         <input
-                         {...register("name", { required: "name is not valid" })}
-                    
-                         type="text"
-                          className="input"
-                           placeholder="Type your email" />
-                       
+                            {...register("name", { required: "name is not valid" })}
+
+                            type="text"
+                            className="input"
+                            placeholder="Type your email" />
+
                     </fieldset>
-                   {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
-                    
+                    {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
+
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Photo</legend>
-                        <input 
-                         {...register("photo", { required: "password is not valid" })}
-                       
-                        type="text"
-                         className="input"
-                          placeholder="photo Url" />
-                       
+                        <input
+                            {...register("photo", { required: "photo is not valid" })}
+
+                            type="text"
+                            className="input"
+                            placeholder="photo Url" />
+
                     </fieldset>
 
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Email</legend>
                         <input
-                         {...register("email", { required: "email is not valid" })}
-                    
-                         type="email"
-                          className="input"
-                           placeholder="Type your email" />
-                       
+                            {...register("email", { required: "email is not valid" })}
+
+                            type="email"
+                            className="input"
+                            placeholder="Type your email" />
+
                     </fieldset>
-                   {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
-                    
+                    {errors.email && <p className='text-red-500'>{errors.email.message}</p>}
+
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Password</legend>
-                        <input 
-                         {...register("password", { required: "password is not valid" })}
-                       
-                        type="password"
-                         className="input"
-                          placeholder="Type your password" />
-                       
+                        <input
+                            {...register("password", { required: "password is not valid" })}
+
+                            type="password"
+                            className="input"
+                            placeholder="Type your password" />
+
                     </fieldset>
-                       {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
-                    <button className='btn btn-primary w-full'>
-                       Register
+                    {errors.password && <p className='text-red-500'>{errors.password.message}</p>}
+                    <button type='submit' className='btn btn-primary w-full'>
+                        Register
                     </button>
                 </form>
 
