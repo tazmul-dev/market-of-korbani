@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { use } from 'react';
 import NevLink from './NevLink';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
@@ -11,7 +11,7 @@ const Navber = () => {
    const {data:session, isPending} = authClient.useSession()
 
    const user = session?.user
-    console.log(user)
+    
     return (
         <div className="navbar bg-base-100 shadow-sm">
             <div className="navbar-start">
@@ -25,7 +25,7 @@ const Navber = () => {
                         
                             <li><NevLink href={'/'}>Home</NevLink></li>
                             <li><NevLink href={'/animals'}>Animals</NevLink></li>
-                            <li><NevLink href={'/Tarms'}>Tarms</NevLink></li>
+                            <li><NevLink href={'/profile'}>Profile</NevLink></li>
 
                        
 
@@ -40,7 +40,7 @@ const Navber = () => {
 
                     <li><NevLink href={'/'}>Home</NevLink></li>
                     <li><NevLink href={'/animals'}>Animals</NevLink></li>
-                    <li><NevLink href={'/Tarms'}>Tarms</NevLink></li>
+                    <li><NevLink href={'/profile'}>Profile</NevLink></li>
 
 
                 </ul>
