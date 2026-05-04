@@ -5,6 +5,7 @@ import card2 from '@/assers/card2.jpg'
  import card4 from '@/assers/goat.jpg'
 import Image from 'next/image';
 import Link from 'next/link';
+import 'animate.css';
 
 const Hero = () => {
     return (
@@ -21,7 +22,7 @@ const Hero = () => {
                 {/* right side */}
 
                 <div className='grid grid-cols-2 gap-4'>
-                    <div className="card shadow-sm hover:animate__fadeInUp">
+                    <div className="card shadow-sm">
                         <figure className="">
                             <Image
                               height={300}
@@ -32,7 +33,7 @@ const Hero = () => {
                         </figure>
                         
                     </div>
-                    <div className="card shadow-sm">
+                    <div className="card shadow-sm ">
                         <figure className="">
                              <Image
                               height={300}

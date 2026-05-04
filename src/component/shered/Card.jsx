@@ -10,9 +10,9 @@ const Card = ({animal}) => {
                 <Image 
                 src={image}
                 alt={name}
-                width={300}
-                height={300}
-                className='w-full h-full object-cover'
+                width={250}
+                height={250}
+                className='w-full h-60 object-cover'
                 >
 
                 </Image>
@@ -20,10 +20,15 @@ const Card = ({animal}) => {
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>
-                <div className="card-actions justify-end">
+                <div className="flex flex-wrap justify-between items-center">
+
+                   <button >
+                        <Link className="btn btn-primary" href={`animalDetails/${animal.id}`}> View Details</Link>
+                    </button>
                     
-                       <Link className="btn btn-primary" href={`animalDetails/${id}`}> View Details</Link>
-                    
+                    <p className='ml-5'><span className='text-[18px] font-medium'>Price:</span> {animal.price}</p>
+                   
+                   
                 </div>
             </div>
         </div>

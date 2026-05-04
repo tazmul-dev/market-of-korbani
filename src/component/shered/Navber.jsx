@@ -4,6 +4,7 @@ import NevLink from './NevLink';
 import Link from 'next/link';
 import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
+import logo from '@/assers/logo.png'
 // import logo from '@/assers/l.png'
 
 
@@ -31,7 +32,8 @@ const Navber = () => {
 
                     </ul>
                 </div>
-                {/* <p>{logo}</p> */}
+               
+               
                 <p className='font-bold text-xl'><span className='text-green-400'>QURBANIR</span> <span className='text-yellow-700'>MARKET</span></p>
                
             </div>

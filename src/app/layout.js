@@ -3,7 +3,10 @@ dns.setServers(['8.8.8.8', '8.8.4.4'])
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navber from "@/component/shered/Navber";
-import "animate.css";
+import 'animate.css';
+import { Toast } from "@heroui/react";
+import Footer from "@/component/shered/Footer";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,10 +32,14 @@ export default function RootLayout({ children }) {
       <body
       suppressHydrationWarning
       className="min-h-full flex flex-col">
+        <Toast.Provider />
         <Navber></Navber>
         <main>
         {children}
         </main>
+        <Footer></Footer>
+        
+        
         
         
         </body>

@@ -1,5 +1,6 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
+import { toast } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -13,18 +14,31 @@ const LoginPage = () => {
         const { data, error } = await authClient.signIn.email({
             email: email, // required
             password: password, // required
-            rememberMe: true,
+            rememberMe: false,
             callbackURL: "/",
         });
-        
+
+        if(error){
+            toast.danger("Invalid email or password")
+        }
+        if(data){
+            toast.success("Login success")
+        }
         // console.log(data, error)
     }
     // console.log(errors, "Error")
+    const handaleGoogleLogin =async ()=>{
+            const data = await authClient.signIn.social({
+             provider: "google",
+      });
+     
+        }
+    
     return (
         <div className='container mx-auto min-h-[80vh] flex justify-center items-center bg-slate-100 '>
             <div className='p-4 bg-white'>
                 <h1 className='text-2xl font-bold my-5'>Login your account</h1>
-                <button className='btn w-full'>Google</button>
+                <button onClick={handaleGoogleLogin} className='btn w-full'>Google</button>
                 <div className="divider"></div>
 
                 <form onSubmit={handleSubmit(handelLoginFunc)}>

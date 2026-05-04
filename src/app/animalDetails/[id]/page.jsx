@@ -26,10 +26,10 @@ const animalDetailsPage = async ({ params }) => {
                 <div className="card-body">
                 <p>Location {location}</p>
                   <p>name: {name}</p>
-                  <p>Price:{price}</p>
-                  <p>Weight:{weight}</p>
+                  <p>Price:{price} tk</p>
+                  <p>Weight:{weight} kg</p>
                   <p>Breed: {breed}</p>
-                  <p>Age: {age}</p>
+                  <p>Age: {age} years</p>
 
                     <p>{description}</p>
                     <div className="card-actions justify-end">

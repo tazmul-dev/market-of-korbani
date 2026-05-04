@@ -1,5 +1,6 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
+import { toast } from '@heroui/react';
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -20,7 +21,7 @@ const RegisterPage = () => {
         })
         console.log(data, error)
         if(error){
-            alert('user alrady register')
+           toast.danger("Simple message")
         }
         if(data){
             alert('success registar')
@@ -30,7 +31,7 @@ const RegisterPage = () => {
         const data = await authClient.signIn.social({
          provider: "google",
   });
-  console.log(data)
+ 
     }
 
     // console.log(errors, "Error")
