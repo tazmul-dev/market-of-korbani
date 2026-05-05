@@ -1,6 +1,7 @@
 'use client'
 // import {Envelope} from "@gravity-ui/icons";
-import {Button, Input, Label, Modal, Surface, TextField, toast} from "@heroui/react";
+import {Button, Input, Label, Modal, Surface, TextField,} from "@heroui/react";
+import { toast } from "react-toastify";
 
 
 const Smodal = () => {

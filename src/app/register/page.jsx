@@ -1,9 +1,10 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
-import { toast } from '@heroui/react';
+
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const RegisterPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
@@ -21,10 +22,10 @@ const RegisterPage = () => {
         })
         console.log(data, error)
         if(error){
-           toast.danger("Simple message")
+           toast.error("This email alrady registerd")
         }
         if(data){
-            alert('success registar')
+            toast.success('success registar')
         }
     }
     const handaleGoogleLogin =async ()=>{
@@ -95,7 +96,7 @@ const RegisterPage = () => {
                     </button>
                 </form>
 
-                <p>Do not have an acount? <Link className='text-red-500' href={"/login"}>Login</Link></p>
+                <p>have an acount? <Link className='text-red-500' href={"/login"}>Login</Link></p>
 
 
 

@@ -1,6 +1,5 @@
 import Smodal from '@/component/Smodal';
 import { animals } from '@/lib/data';
-import { Modal } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 

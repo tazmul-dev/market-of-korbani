@@ -1,9 +1,10 @@
 "use client"
 import { authClient } from '@/lib/auth-client';
-import { toast } from '@heroui/react';
+
 import Link from 'next/link';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
@@ -19,7 +20,7 @@ const LoginPage = () => {
         });
 
         if(error){
-            toast.danger("Invalid email or password")
+           toast.error('Invalid email or passwor')
         }
         if(data){
             toast.success("Login success")
