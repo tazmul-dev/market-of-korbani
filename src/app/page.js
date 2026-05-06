@@ -12,5 +12,5 @@ export default function Home() {
      <Breed></Breed>
      <QurbaniTips></QurbaniTips>
     </div>
-  );
+  )
 }

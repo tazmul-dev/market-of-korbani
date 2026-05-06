@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+Project name: maket of qurbani
 
-First, run the development server:
+features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Ragister: any pepole  register my website;
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Login: if anyone see animals datails , mostly login her,
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. google login : if anyone went to google login it's will be able.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. profil: any pepole if see the profile her and her profile updete.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+npm packages:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Better auth: npm install better-auth.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. mongodb: npm install mongodb.
 
-## Deploy on Vercel
+3. Mongodb adapter: npm install @better-auth/mongo-adapter
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Purpose:
+
+QurbaniHat is a modern livestock booking platform designed to make the Qurbani animal buying experience easier, safer, and more convenient for users. The main purpose of this project is to help users explore healthy and trusted livestock such as cows and goats, view detailed information, and place a booking online with confidence.
+
